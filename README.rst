@@ -8,13 +8,13 @@ balancer.
 
 It allows to specify the path that activate the middleware, for example
 ``/`` or ``/a/specific/path``. The path *must* be specified in the variable
-BEHIND_LB_PATH in your settings.py.
+``BEHIND_LB_PATH`` in your settings.py.
 
 It works with any load balancer that sends the public remote address in
 a fixed relative position in the header (first, second,... , last).
 For example, Amazon ELB puts it in the last position, Google Compute
 Load Balancer in the penultimate one. The position *must*
-be specified in the ``settings.BEHIND_LB_POSITION``.
+be specified in ``settings.BEHIND_LB_POSITION``.
 
 Quick start
 -----------
@@ -35,7 +35,7 @@ Quick start
     BEHIND_LB_POSITION = -2 # For Google Compute Engine
 
 
-4. Try it reading the default request.META['REMOTE_ADDR'] in a View class. It
+4. Try it reading the default ``request.META['REMOTE_ADDR']`` in a View class. It
    should read the real client IP.
 
 Position options
